@@ -1,0 +1,24 @@
+Étape 1 : Installer Git (Pour récupérer ton site)
+Comme tu as juste Apache, il te faut l'outil pour télécharger ton dépôt.
+
+Bash
+apt update
+apt install git -y
+Étape 2 : Récupérer ton site (Clone)
+On va placer ton site dans un dossier propre /var/www/ecotech.
+
+Crée le dossier (et nettoie si jamais il y a un reste) :
+
+Bash
+rm -rf /var/www/ecotech
+mkdir -p /var/www/ecotech
+Clone ton dépôt : Remplace l'URL ci-dessous par le lien HTTPS de ton dépôt GitHub. L'espace et le point . à la fin sont importants pour ne pas créer un sous-dossier inutile.
+
+Bash
+# Exemple : git clone https://github.com/TonPseudo/TonProjet.git .
+git clone https://github.com/TonPseudo/TonDepot.git /var/www/ecotech/
+Vérifie que les fichiers sont là :
+
+Bash
+ls -l /var/www/ecotech/
+👉 Tu dois voir : index.html, assets, images...
