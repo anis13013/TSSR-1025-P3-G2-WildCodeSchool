@@ -42,7 +42,6 @@ L'infrastructure repose sur les briques technologiques suivantes :
 - **Systèmes Serveurs** : Windows Server 2022 (versions Standard et Core) et serveurs Linux Debian.
 - **Systèmes Clients** : Postes de travail sous Windows 10/11 et Ubuntu Desktop.
 
-> *Cette liste évoluera au fil des sprints et sera détaillée dans les dossiers HLD/LLD.*
 ## Services déployés
 
 Les services principaux mis en œuvre durant le projet sont :
