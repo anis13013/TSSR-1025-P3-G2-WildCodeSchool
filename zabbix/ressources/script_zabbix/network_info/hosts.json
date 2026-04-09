@@ -1,0 +1,97 @@
+{
+  "infrastructure": "ECO-BDX Lab TSSR",
+  "updated": "2026-02-07",
+  "admin_host": {
+    "hostname": "ECO-BDX-ADMIN",
+    "ip": "10.20.10.3",
+    "subnet": "10.20.10.0/28",
+    "vlan": "210",
+    "network": "ADMIN",
+    "role": "VM ADMIN / Orchestrateur",
+    "notes": "Machine d'administration"
+  },
+  "zabbix_infrastructure": {
+    "server": {
+      "ip": "10.20.20.12",
+      "hostname": "Serveur Zabbix",
+      "vlan": "220",
+      "notes": "Serveur Zabbix principal - Deja configure"
+    },
+    "proxy": {
+      "ip": "10.20.20.13",
+      "hostname": "ECO-BDX-EX11",
+      "vlan": "220",
+      "notes": "Proxy Zabbix (Antenne) pour DMZ - Deja configure"
+    }
+  },
+  "hosts": [
+    {
+      "hostname": "ECO-BDX-EX01",
+      "ip": "10.20.20.5",
+      "subnet": "10.20.20.0/27",
+      "vlan": "220",
+      "network": "LAN",
+      "os": "windows",
+      "ssh_user": "administrator",
+      "ssh_port": 22222,
+      "zabbix_server": "10.20.20.12",
+      "role": "Serveur AD, DHCP",
+      "notes": "Controleur de domaine - SSH port 22222 - Cle configuree"
+    },
+    {
+      "hostname": "ECO-BDX-EX02",
+      "ip": "10.20.20.6",
+      "subnet": "10.20.20.0/27",
+      "vlan": "220",
+      "network": "LAN",
+      "os": "windows",
+      "ssh_user": "administrator",
+      "ssh_port": 22222,
+      "zabbix_server": "10.20.20.12",
+      "role": "Serveur AD, DHCP",
+      "notes": "Controleur de domaine secondaire - SSH port 22222 - Cle configuree"
+    },
+    {
+      "hostname": "ECO-BDX-EX07",
+      "ip": "10.20.20.7",
+      "subnet": "10.20.20.0/27",
+      "vlan": "220",
+      "network": "LAN",
+      "os": "linux",
+      "distribution": "ubuntu",
+      "ssh_user": "root",
+      "ssh_port": 22,
+      "zabbix_server": "10.20.20.12",
+      "role": "Serveur web interne",
+      "notes": "Apache/Nginx - Cle configuree"
+    },
+    {
+      "hostname": "ECO-BDX-EX08",
+      "ip": "10.50.0.6",
+      "subnet": "10.50.0.0/28",
+      "vlan": "DMZ",
+      "network": "DMZ",
+      "os": "linux",
+      "distribution": "debian",
+      "ssh_user": "root",
+      "ssh_port": 22,
+      "zabbix_server": "10.20.20.13",
+      "role": "Serveur web front",
+      "notes": "Zone demilitarisee - Via Proxy Zabbix EX11 - Cle configuree"
+    },
+    {
+      "hostname": "ECO-BDX-EX09",
+      "ip": "10.50.0.5",
+      "subnet": "10.50.0.0/28",
+      "vlan": "DMZ",
+      "network": "DMZ",
+      "os": "linux",
+      "distribution": "debian",
+      "ssh_user": "root",
+      "ssh_port": 22,
+      "zabbix_server": "10.20.20.13",
+      "role": "Proxy web (Nginx/Squid) - Passerelle internet",
+      "notes": "Zone demilitarisee - Via Proxy Zabbix EX11 - Cle configuree"
+    }
+  ]
+}
